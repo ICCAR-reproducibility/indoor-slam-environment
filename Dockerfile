@@ -48,7 +48,7 @@ USER gazebo_user
 WORKDIR /home/gazebo_user
 
 # Copy your world file into the container
-COPY indoor_world_file/small_warehouse.world /home/gazebo_user/worlds/
+COPY --chown=gazebo_user:gazebo_user indoor_world_file/. /home/gazebo_user/worlds/
 
 COPY --chown=gazebo_user:gazebo_user ./models/. /home/gazebo_user/.gazebo/models/
 
